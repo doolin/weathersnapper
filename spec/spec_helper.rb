@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 
 require File.join(File.dirname(__FILE__), '..', 'weathersnapper.rb')
+$:<< File.join(File.dirname(__FILE__), './fixtures')
 
 require 'sinatra'
 require 'rack/test'

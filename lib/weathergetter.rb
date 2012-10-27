@@ -11,7 +11,10 @@ class WeatherGetter
 
   attr_reader :forecast
 
-  def initialize(zipcode)
+  def initialize
+  end
+
+  def get_forecast(zipcode)
     @hydra = Typhoeus::Hydra.new
     url = "http://api.wunderground.com/api/#{APIKEY}/forecast10day/q/#{zipcode}.json"
     @forecast = make_request(url)

@@ -45,10 +45,14 @@ end
 
 describe WeatherGetter do
 
+  before(:all) do
+    @json = JSON.parse(IO.read('./spec/fixtures/wunderground_10day.json'))
+  end
+
   it "gets the weather for 94530" do
-    wg = WeatherGetter.new(94530)
-    #puts wg.forecast
-    wg.forecast.should  include('forecast')
+    wg = WeatherGetter.new
+    forecast = wg.get_forecast(94530)
+    forecast.should  include('forecast')
   end
 
 end
