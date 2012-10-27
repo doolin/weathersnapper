@@ -1,5 +1,7 @@
 %pre Some weather snapper here.
-%form{:method => "get"}
-  .zipcodeform
-    %input#submit{:name => "zipcode", :type => "submit", :value => "94530"}/
+= @zipcode
+.zipcodeform
+  %form{:method => "get"}
+    %input#submit{:name => "zipcode", :type => "input", :value => "94530"}/
+    %input#submit{:type => "submit"}/
 
