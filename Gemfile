@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'sinatra'
-# gem 'redis'
+gem 'typhoeus'
 gem 'sass'
 gem 'rb-fsevent'
 gem 'thin'

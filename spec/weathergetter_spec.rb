@@ -42,3 +42,12 @@ describe "Requests", :type => :request do
 =end
 
 end
+
+describe WeatherGetter do
+
+  it "gets the weather for 94530" do
+    wg = WeatherGetter.new(94530)
+    #puts wg.forecast
+  end
+
+end
