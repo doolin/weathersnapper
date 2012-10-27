@@ -48,6 +48,7 @@ describe WeatherGetter do
   it "gets the weather for 94530" do
     wg = WeatherGetter.new(94530)
     #puts wg.forecast
+    wg.forecast.should  include('forecast')
   end
 
 end

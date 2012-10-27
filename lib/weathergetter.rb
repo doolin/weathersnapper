@@ -5,7 +5,7 @@ require 'json'
 
 include Typhoeus
 
-APIKEY = "ca6bf06c16a970c9"
+APIKEY = ENV['WUNDERGROUND_APIKEY']
 
 class WeatherGetter
 
