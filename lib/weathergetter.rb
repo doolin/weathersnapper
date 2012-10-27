@@ -9,7 +9,7 @@ APIKEY = ENV['WUNDERGROUND_APIKEY']
 
 class WeatherGetter
 
-  attr_reader :forecast
+  attr_reader :forecast, :forecastday
 
   def initialize
   end
@@ -33,6 +33,10 @@ class WeatherGetter
 
     data = JSON.parse(response.body)
     return data
+  end
+
+  def parse_wunderground_10day(forecast)
+    @forecastday = forecast['forecast']['txt_forecast']['forecastday']
   end
 
 end

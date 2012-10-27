@@ -55,4 +55,13 @@ describe WeatherGetter do
     forecast.should  include('forecast')
   end
 
+  it "extracts wunderground's 10 day forecast" do
+    wg = WeatherGetter.new
+    fcd = wg.parse_wunderground_10day(@json)
+    #puts fcd
+    #fcd.should  include('period')
+    fcd.size.should == 20
+    fcd.should have(20).items
+  end
+
 end
