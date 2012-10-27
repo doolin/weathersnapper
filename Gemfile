@@ -3,6 +3,8 @@ source :rubygems
 gem 'sinatra'
 gem 'typhoeus'
 gem 'sass'
+gem 'haml'
+gem 'kramdown'
 gem 'rb-fsevent'
 gem 'thin'
 gem 'foreman'
