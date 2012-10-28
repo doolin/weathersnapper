@@ -30,3 +30,15 @@ get '/' do
   haml :index
 end
 
+post '/' do
+
+  if params[:zipcode]
+    wg = WeatherGetter.new
+    @zipcode = params[:zipcode]
+    @forecast = wg.get_forecast(@zipcode)
+    @forecastday = wg.parse_wunderground_10day(@forecast)
+  end
+
+  haml :index
+end
+
