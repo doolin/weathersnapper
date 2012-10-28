@@ -9,9 +9,10 @@
     %th Date
     %th POP
   %tbody
-    - @forecastday.each do |period|
-      %tr
-        %td
-          = period['period']+1
-        %td
-          = period['pop']
+    - unless @forecastday.nil?
+      - @forecastday.each do |period|
+        %tr
+          %td
+            = period['period']+1
+          %td
+            = period['pop']
