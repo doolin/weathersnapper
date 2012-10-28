@@ -5,24 +5,6 @@
     %input#submit{:type => "submit"}/
 
 -#= markdown :testem
-= haml :poptable
+- unless @forecastday.nil?
+  = haml :poptable
 
-%table
-  %tr.snapper
-    %th
-    %th Date
-    %th POP
-  %tbody
-    - unless @forecastday.nil?
-      - @forecastday.each do |period|
-        %tr
-          %td.icon
-            <img src="#{period['icon_url']}" height="64" />
-          %td.date
-            - @dd.set_epoch((period['date']['epoch']).to_i)
-            = "#{@dd.get_day('day')},"
-            = @dd.get_date('date')
-            = "#{@dd.get_month('month')}."
-            = @dd.get_year('year')
-          %td.pop
-            = "#{period['pop']}"

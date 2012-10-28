@@ -1,10 +1,10 @@
-%table
-  %tr.snapper
-    %th
-    %th Date
-    %th POP
-  %tbody
-    - unless @forecastday.nil?
+.ajaxtarget
+  %table
+    %tr.snapper
+      %th
+      %th Date
+      %th POP
+    %tbody
       - @forecastday.each do |period|
         %tr
           %td.icon
