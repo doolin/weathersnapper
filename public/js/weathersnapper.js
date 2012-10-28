@@ -1,7 +1,8 @@
 
 jQuery.validator.addMethod("postalcode", function(postalcode, element) {
   //return this.optional(element) || postalcodecode.match(/(^\d{5}(-\d{4})?$)$/);
-  return this.optional(element) || postalcodecode.match(/(^\d{5}(-\d{4})?$)$/);
+  //return this.optional(element) || postalcodecode.match(/(^\d{5}?$)$/);
+  return this.optional(element) || postalcodecode.match(/(\d{5})/);
 }, "Please specify a valid postal/zip code");
 
 $(document).ready(function(){
@@ -16,6 +17,7 @@ $(document).ready(function(){
 
   // Not getting validator to work correcly, this is a first cut
   // which sort of works.
+  /*
   $('#postalcode').keyup(function() {
     $('span.error-keyup-1').hide();
     var inputVal = $(this).val();
@@ -24,5 +26,6 @@ $(document).ready(function(){
         $(this).after('<span class="error error-keyup-1">Numeric characters only.</span>');
     }
   });
+ */
 
 });
