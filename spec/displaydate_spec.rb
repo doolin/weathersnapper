@@ -36,10 +36,19 @@ describe DisplayDate do
     @epoch = 1351404000
   end
 
+  before(:each) do
+    @dd = DisplayDate.new
+    @dd.set_epoch(@epoch)
+  end
+
   it "should display the day as Saturday" do
-    dd = DisplayDate.new(@epoch)
-    day = dd.get_day("day")
+    day = @dd.get_day("day")
     day.should =~ /Saturday/
+  end
+
+  it "should display the  month as Oct" do
+    month = @dd.get_month("month")
+    month.should =~ /Oct/
   end
 
 end
