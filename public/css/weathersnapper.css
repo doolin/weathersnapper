@@ -1,0 +1,14 @@
+/**
+ * TODO: Switch to sass.
+ */
+
+div.doolin {
+  position: fixed;
+  bottom: 5px; 
+  right: 5px;
+}
+
+.shamrock {
+  color: #008000;
+  font-size: 110%;
+}
