@@ -36,6 +36,8 @@ class WeatherGetter
   end
 
   def parse_wunderground_10day(forecast)
+    # Bad zipcode produces forecast['response']['error']['type'] => "querynotfound"
+    # Will need to do some spec for the above.
     @forecastday = forecast['forecast']['simpleforecast']['forecastday']
   end
 
