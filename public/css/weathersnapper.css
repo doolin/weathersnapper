@@ -10,15 +10,21 @@ tr.snapper {
 }
 
 
+td.icon {
+  padding-right: 30px;
+}
+
 td.date {
-  font-size: 48pt;
+  font-size: 24pt;
   line-height: 48pt;
+  padding-right: 30px;
 }
 
 
 td.pop {
-  font-size: 48pt;
+  font-size: 36pt;
   line-height: 48pt;
+  text-align: right;
 }
 
 
