@@ -5,7 +5,13 @@
     %input#submit{:type => "submit"}/
 
 %table
-  - @forecastday.each do |period|
-    %tr
-      %td
-        = period['pop']
+  %tr
+    %th Date
+    %th POP
+  %tbody
+    - @forecastday.each do |period|
+      %tr
+        %td
+          = period['period']+1
+        %td
+          = period['pop']
