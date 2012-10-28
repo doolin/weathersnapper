@@ -2,6 +2,10 @@
  * TODO: Switch to sass.
  */
 
+body {
+  background-image: url("/img/cardboard_flat.png");
+}
+
 div.doolin {
   position: fixed;
   bottom: 5px; 
