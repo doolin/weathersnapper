@@ -1,10 +1,11 @@
-%pre Some weather snapper here.
+
+= markdown :introduction
+
 .zipcodeform
   %form{:method => "post"}
     %input#submit{:name => "zipcode", :type => "input", :value => "#{@zipcode}"}/
-    %input#submit{:type => "submit"}/
+    %input#submit{:type => "submit", :value => "Get my weather"}/
 
--#= markdown :testem
 - unless @forecastday.nil?
   = haml :poptable
 
