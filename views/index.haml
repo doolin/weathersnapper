@@ -8,6 +8,7 @@
   %tr.snapper
     %th Date
     %th POP
+    %th Show me
   %tbody
     - unless @forecastday.nil?
       - @forecastday.each do |period|
@@ -16,4 +17,6 @@
             - @dd.set_epoch((period['date']['epoch']).to_i)
             = @dd.get_day('day')
           %td.pop
-            = period['pop']
+            = "#{period['pop']}"
+          %td.icon
+            <img src="#{period['icon_url']}" height="64" />
