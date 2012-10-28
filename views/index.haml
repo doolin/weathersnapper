@@ -1,7 +1,11 @@
 %pre Some weather snapper here.
-= @zipcode
 .zipcodeform
   %form{:method => "get"}
     %input#submit{:name => "zipcode", :type => "input", :value => "94530"}/
     %input#submit{:type => "submit"}/
 
+%table
+  - @forecastday.each do |period|
+    %tr
+      %td
+        = period['pop']
