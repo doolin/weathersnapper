@@ -21,6 +21,8 @@ end
 
 get '/' do
 
+  @zipcode = "zipcode"
+
   if params[:zipcode]
     wg = WeatherGetter.new
     @zipcode = params[:zipcode]
@@ -33,6 +35,7 @@ end
 
 post '/' do
 
+  @zipcode = "zipcode"
   if params[:zipcode]
     @dd = DisplayDate.new
     wg = WeatherGetter.new

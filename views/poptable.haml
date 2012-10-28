@@ -1,12 +1,3 @@
-%pre Some weather snapper here.
-.zipcodeform
-  %form{:method => "post"}
-    %input#submit{:name => "zipcode", :type => "input", :value => "#{@zipcode}"}/
-    %input#submit{:type => "submit"}/
-
--#= markdown :testem
-= haml :poptable
-
 %table
   %tr.snapper
     %th
