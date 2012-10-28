@@ -2,8 +2,8 @@
 = markdown :introduction
 
 .zipcodeform
-  %form{:method => "post"}
-    %input#submit{:name => "zipcode", :type => "input", :value => "#{@zipcode}"}/
+  %form#zipform{:method => "post", :validate => true}
+    %input#postalcode.required{:name => "zipcode", :type => "input", :value => "#{@zipcode}"}/
     %input#submit{:type => "submit", :value => "Get my weather"}/
 
 - unless @forecastday.nil?
