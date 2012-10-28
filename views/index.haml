@@ -5,14 +5,15 @@
     %input#submit{:type => "submit"}/
 
 %table
-  %tr
+  %tr.snapper
     %th Date
     %th POP
   %tbody
     - unless @forecastday.nil?
       - @forecastday.each do |period|
         %tr
-          %td
-            = period['period']+1
-          %td
+          %td.date
+            - @dd.set_epoch((period['date']['epoch']).to_i)
+            = @dd.get_day('day')
+          %td.pop
             = period['pop']

@@ -36,7 +36,7 @@ class WeatherGetter
   end
 
   def parse_wunderground_10day(forecast)
-    @forecastday = forecast['forecast']['txt_forecast']['forecastday']
+    @forecastday = forecast['forecast']['simpleforecast']['forecastday']
   end
 
 end

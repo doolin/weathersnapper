@@ -6,6 +6,22 @@ body {
   background-image: url("/img/cardboard_flat.png");
 }
 
+tr.snapper {
+}
+
+
+td.date {
+  font-size: 48pt;
+  line-height: 48pt;
+}
+
+
+td.pop {
+  font-size: 48pt;
+  line-height: 48pt;
+}
+
+
 div.doolin {
   position: fixed;
   bottom: 5px; 

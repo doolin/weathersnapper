@@ -2,9 +2,10 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'kramdown'
+#require 'json'
 
 require './lib/weathergetter'
-#require 'json'
+require './lib/displaydate'
 
 helpers do
   include Rack::Utils
@@ -33,6 +34,7 @@ end
 post '/' do
 
   if params[:zipcode]
+    @dd = DisplayDate.new
     wg = WeatherGetter.new
     @zipcode = params[:zipcode]
     @forecast = wg.get_forecast(@zipcode)

@@ -1,7 +1,7 @@
 
 class DisplayDate
 
-  def initialize(epoch)
+  def set_epoch(epoch)
     @epoch = Time.at(epoch)
   end
 
