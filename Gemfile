@@ -13,6 +13,7 @@ gem 'simplecov', :require => false, :group => :test
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'cucumber'
   gem 'rest-assured'
   gem 'rspec-http'
   gem 'rack-test', :require => 'rack/test'
