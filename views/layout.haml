@@ -13,13 +13,13 @@
     %script{:src => "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js", :type => "text/javascript"}
     %script{:src => "/js/weathersnapper.js", :type => "text/javascript"}
   %body
-  .container
-    .row
-      .span8.offset2
-        %h1 Got your weather snapper here
-        = yield
+    .container
+      .row
+        .span8.offset2
+          %h1 Got your weather snapper here
+          = yield
 
-    .doolin
-      %span.shamrock ☘
-      %a{:href => "http://dool.in/", :title => "My routing page."} dool.in
+      .doolin
+        %span.shamrock ☘
+        %a{:href => "http://dool.in/", :title => "My routing page."} dool.in
 
