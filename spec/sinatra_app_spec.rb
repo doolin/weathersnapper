@@ -1,16 +1,17 @@
 require 'spec_helper'
 
 describe "Sinatra App" do
-  it "should respond to GET" do
+  it "responds to GET" do
     get '/'
-    last_response.should be_ok
-    last_response.body.should match(/snapper/)
+    expect(last_response).to be_ok
+    expect(last_response.body).to match(/snapper/)
   end
 
-  xit "should respond to GET/zipcode" do
-    get '/zipcode'
-    last_response.should be_ok
-    last_response.body.should match(/{\"asdf\":*/)
+  # Not sure where I was going with this, but it's working now.
+  it "responds to GET/zipcode with json" do
+    get '/zipcode/12345'
+    expect(last_response).to be_ok
+    expect(last_response.body).to match(/{\"asdf\":*/)
   end
 end
 
