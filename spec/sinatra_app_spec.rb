@@ -16,18 +16,18 @@ describe "Sinatra App" do
 end
 
 describe "Requests", :type => :request do
-  before(:all) do
+  before :all  do
     @forecast = JSON.parse(IO.read('./spec/fixtures/wunderground_10day.json'))
   end
 
-  before(:each) do
+  before :each  do
     weathergetter = double(WeatherGetter)
-    weathergetter.stub(:get_forecast).and_return(@forecast)
+    allow(weathergetter).to receive(:get_forecast).and_return(@forecast)
   end
 
   xit "fetches weather by zipcode" do
-    visit '/'
-    #fill_in :postalcode, :with => '94530'
+    get '/'
+    # fill_in "postalcode", :with => '94530'
     find(:xpath, "//input[@id='postalcode']").set "94530"
     click_button 'Get my weather'
     page.has_content?('pop')

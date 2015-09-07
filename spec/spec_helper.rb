@@ -26,7 +26,10 @@ RSpec.configure do |config|
   #config.mock_with :rspec
   #config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
+  config.include Capybara::DSL
+  Capybara.app = Sinatra::Application
+
   def app
-  	Sinatra::Application
+    Sinatra::Application
   end
 end

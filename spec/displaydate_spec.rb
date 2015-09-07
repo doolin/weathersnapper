@@ -10,22 +10,22 @@ describe Time do
 
   it "shows that it's Saturday today" do
     day = @t.strftime("%A")
-    day.should == "Saturday"
+    expect(day).to eq "Saturday"
   end
 
   it "shows that the month is October" do
     month = @t.strftime("%B")
-    month.should == "October"
+    expect(month).to eq "October"
   end
 
   it "shows the date as the 27th" do
     date = @t.strftime("%d")
-    date.should == "27"
+    expect(date).to eq "27"
   end
 
   it "shows the year as 2012" do
     year = @t.strftime("%Y")
-    year.should == "2012"
+    expect(year).to eq "2012"
   end
 
 end
@@ -43,12 +43,12 @@ describe DisplayDate do
 
   it "should display the day as Saturday" do
     day = @dd.get_day("day")
-    day.should =~ /Saturday/
+    expect(day).to match(/Saturday/)
   end
 
   it "should display the  month as Oct" do
     month = @dd.get_month("month")
-    month.should =~ /Oct/
+    expect(month).to match(/Oct/)
   end
 
 end
