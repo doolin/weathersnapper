@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'typhoeus'
@@ -9,6 +9,8 @@ gem 'rb-fsevent'
 gem 'thin'
 gem 'foreman'
 gem 'simplecov', :require => false, :group => :test
+
+gem 'rubocop'
 
 group :test do
   gem 'rspec'
