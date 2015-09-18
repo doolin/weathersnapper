@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start
 
 require File.join(File.dirname(__FILE__), '..', 'weathersnapper.rb')
-$:<< File.join(File.dirname(__FILE__), './fixtures')
+$LOAD_PATH << File.join(File.dirname(__FILE__), './fixtures')
 
 require 'sinatra'
 require 'rack/test'
@@ -23,8 +23,8 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-  #config.mock_with :rspec
-  #config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  # config.mock_with :rspec
+  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.include Capybara::DSL
   Capybara.app = Sinatra::Application

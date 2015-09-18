@@ -8,7 +8,6 @@ include Typhoeus
 APIKEY = ENV['WUNDERGROUND_APIKEY']
 
 class WeatherGetter
-
   attr_reader :forecast, :forecastday
 
   def initialize
@@ -20,19 +19,17 @@ class WeatherGetter
     @forecast = make_request(url)
   end
 
-
   def make_request(url)
-
     request = Typhoeus::Request.new(url,
-            :method        => :get,
-            :timeout       => 5000, # milliseconds
-            :cache_timeout => 60) # seconds
+                                    method: :get,
+                                    timeout: 5000, # milliseconds
+                                    cache_timeout: 60) # seconds
     @hydra.queue(request)
     @hydra.run
     response = request.response
 
     data = JSON.parse(response.body)
-    return data
+    data
   end
 
   def parse_wunderground_10day(forecast)
@@ -40,6 +37,4 @@ class WeatherGetter
     # Will need to do some spec for the above.
     @forecastday = forecast['forecast']['simpleforecast']['forecastday']
   end
-
 end
-

@@ -1,3 +1,3 @@
-require "./weathersnapper"
+require './weathersnapper'
 
 run Sinatra::Application

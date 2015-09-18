@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'kramdown'
-#require 'json'
+# require 'json'
 
 require './lib/weathergetter'
 require './lib/displaydate'
@@ -12,16 +12,15 @@ helpers do
   alias_method :h, :escape_html
 end
 
-#'\b[0-9]{5}(?:-[0-9]{4})?\b'
+# '\b[0-9]{5}(?:-[0-9]{4})?\b'
 
 get %r{/zipcode/(?<zipcode>[0-9]{5})} do
   @zipcode = params[:zipcode]
-  markdown :testem, :layout_engine =>:haml
+  markdown :testem, layout_engine: :haml
 end
 
 get '/' do
-
-  @zipcode = "zipcode"
+  @zipcode = 'zipcode'
 
   if params[:zipcode]
     wg = WeatherGetter.new
@@ -34,8 +33,7 @@ get '/' do
 end
 
 post '/' do
-
-  @zipcode = "zipcode"
+  @zipcode = 'zipcode'
   if params[:zipcode]
     @dd = DisplayDate.new
     wg = WeatherGetter.new
@@ -46,4 +44,3 @@ post '/' do
 
   haml :index
 end
-
