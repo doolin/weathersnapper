@@ -11,8 +11,7 @@ APIKEY = ENV['WUNDERGROUND_APIKEY']
 class WeatherGetter
   attr_reader :forecast, :forecastday
 
-  def initialize
-  end
+  def initialize; end
 
   def get_forecast(zipcode)
     @hydra = Typhoeus::Hydra.new
