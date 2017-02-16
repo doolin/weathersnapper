@@ -1,4 +1,5 @@
 
+# frozen_string_literal: true
 class DisplayDate
   def set_epoch(epoch)
     @epoch = Time.at(epoch)
