@@ -55,7 +55,7 @@ GEM
     haml (4.0.7)
       tilt
     i18n (0.7.0)
-    json (1.8.3)
+    json (1.8.6)
     kramdown (1.11.1)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -160,4 +160,4 @@ DEPENDENCIES
   typhoeus
 
 BUNDLED WITH
-   1.12.5
+   1.14.4
