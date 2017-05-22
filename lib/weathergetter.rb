@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ## Get forecast from wunderground
 
 require 'typhoeus'
