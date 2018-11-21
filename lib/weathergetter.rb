@@ -1,15 +1,10 @@
-# frozen_string_literal: true
-
-## Get forecast from wunderground
-
 require 'typhoeus'
 require 'json'
 require 'pry'
 
 include Typhoeus
 
-# Dead, wunderground now belongs to IBM
-APIKEY = ENV['WUNDERGROUND_APIKEY']
+APIKEY = ENV['OPEN_WEATHER_MAP_APIKEY']
 
 class WeatherGetter
   attr_reader :forecast, :forecastday
@@ -24,7 +19,7 @@ class WeatherGetter
   end
 
   def apikey
-    "APPID=#{ENV['OPEN_WEATHER_MAP_APIKEY']}"
+    "APPID=#{APIKEY}"
   end
 
   def make_request(url)
@@ -40,8 +35,6 @@ class WeatherGetter
   end
 
   def parse_wunderground_10day(forecast)
-    # Bad zipcode produces forecast['response']['error']['type'] => "querynotfound"
-    # Will need to do some spec for the above.
     @forecastday = forecast['forecast']['simpleforecast']['forecastday']
   end
 end

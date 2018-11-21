@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'simplecov'
 SimpleCov.start
 
@@ -10,6 +8,7 @@ require 'sinatra'
 require 'rack/test'
 require 'capybara/rspec'
 require 'capybara/dsl'
+require 'vcr'
 require 'pry'
 
 # setup test environment
@@ -22,6 +21,13 @@ Capybara.app = Sinatra::Application
 
 def app
   Sinatra::Application
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :typhoeus
+  config.filter_sensitive_data("<API_KEY>") { APIKEY }
+  config.configure_rspec_metadata!
 end
 
 RSpec.configure do |config|
