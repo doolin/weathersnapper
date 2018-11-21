@@ -7,10 +7,13 @@ describe WeatherGetter do
     @json = JSON.parse(IO.read('./spec/fixtures/wunderground_10day.json'))
   end
 
-  xit 'gets the weather for 94530' do
+  it 'gets the weather for 94530' do
     wg = WeatherGetter.new
     forecast = wg.get_forecast(94_530)
-    forecast.should include('forecast')
+    binding.pry
+    expect(forecast['cod']).to be 401
+    expect(forecast['message']).to match('Invalid API key')
+    # forecast.should include('forecast')
   end
 
   xit "extracts wunderground's 10 day txt_forecast" do

@@ -4,20 +4,27 @@
 
 require 'typhoeus'
 require 'json'
+require 'pry'
 
 include Typhoeus
 
+# Dead, wunderground now belongs to IBM
 APIKEY = ENV['WUNDERGROUND_APIKEY']
 
 class WeatherGetter
   attr_reader :forecast, :forecastday
 
-  def initialize; end
-
   def get_forecast(zipcode)
     @hydra = Typhoeus::Hydra.new
-    url = "http://api.wunderground.com/api/#{APIKEY}/forecast10day/q/#{zipcode}.json"
-    @forecast = make_request(url)
+    @forecast = make_request(url(zipcode))
+  end
+
+  def url(zipcode)
+    "api.openweathermap.org/data/2.5/weather?zip=#{zipcode},us&#{apikey}"
+  end
+
+  def apikey
+    "APPID=#{ENV['OPEN_WEATHER_MAP_APIKEY']}"
   end
 
   def make_request(url)

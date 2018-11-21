@@ -15,7 +15,12 @@ group :development do
 end
 
 group :test do
+  gem 'vcr'
   gem 'capybara'
   gem 'cucumber'
   gem 'rspec'
+end
+
+group :development, :test do
+  gem 'pry-nav'
 end

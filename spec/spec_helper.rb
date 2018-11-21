@@ -10,6 +10,7 @@ require 'sinatra'
 require 'rack/test'
 require 'capybara/rspec'
 require 'capybara/dsl'
+require 'pry'
 
 # setup test environment
 set :environment, :test
