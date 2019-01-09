@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: api.openweathermap.org/data/2.5/weather?zip=94530,us&APPID=<API_KEY>
+    uri: api.openweathermap.org/data/2.5/weather?zip=94530,us&APPID=
     body:
       encoding: US-ASCII
       string: ''
@@ -13,21 +13,21 @@ http_interactions:
       - ''
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
       Server:
       - openresty
       Date:
-      - Wed, 21 Nov 2018 21:27:11 GMT
+      - Wed, 09 Jan 2019 12:32:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '526'
+      - '107'
       Connection:
       - keep-alive
       X-Cache-Key:
-      - "/data/2.5/weather?APPID=<API_KEY>&zip=94530,us"
+      - "/data/2.5/weather?APPID=&zip=94530,us"
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Credentials:
@@ -36,10 +36,10 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"coord":{"lon":-122.3,"lat":37.92},"weather":[{"id":521,"main":"Rain","description":"shower
-        rain","icon":"09d"},{"id":701,"main":"Mist","description":"mist","icon":"50d"}],"base":"stations","main":{"temp":287.67,"pressure":1014,"humidity":86,"temp_min":284.25,"temp_max":290.35},"visibility":9656,"wind":{"speed":8.7,"deg":150},"rain":{"1h":2.67},"clouds":{"all":90},"dt":1542834360,"sys":{"type":1,"id":439,"message":0.0048,"country":"US","sunrise":1542812229,"sunset":1542847994},"id":420002820,"name":"Richmond","cod":200}'
+      string: '{"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401
+        for more info."}'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: http://api.openweathermap.org/data/2.5/weather?zip=94530,us&APPID=<API_KEY>
-  recorded_at: Wed, 21 Nov 2018 21:27:11 GMT
+      effective_url: http://api.openweathermap.org/data/2.5/weather?zip=94530,us&APPID=
+  recorded_at: Wed, 09 Jan 2019 12:32:55 GMT
 recorded_with: VCR 4.0.0
